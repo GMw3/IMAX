@@ -1,4 +1,5 @@
 import React from "react";
+
 import { FaTwitterSquare } from "react-icons/fa";
 
 const CoreTeamMember = ({ member }) => {

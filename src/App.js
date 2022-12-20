@@ -1,11 +1,19 @@
-import "./App.css";
+import { useEffect } from "react";
+
 import CoreTeam from "./components/core_team/CoreTeam";
 import Faq from "./components/faq/Faq";
 import Footer from "./components/footer/Footer";
 import Roadmap from "./components/roadmap/Roadmap";
 import Team from "./components/team/Team";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+import "./App.css";
+
 function App() {
+  useEffect(() => {
+    Aos.init({ duration: 3000 });
+  }, []);
   return (
     <div className="App">
       <Roadmap />

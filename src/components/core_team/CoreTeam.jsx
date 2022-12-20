@@ -1,10 +1,11 @@
 import React from "react";
+
 import { CoreTeamDetails } from "./CoreTeamDetails";
 import CoreTeamMember from "./CoreTeamMember";
 
 const CoreTeam = () => {
   return (
-    <div>
+    <div data-aos="fade-up">
       <div className="text-red-700 font-semibold text-center text-4xl pb-10 pt-10">
         CORE TEAM
       </div>

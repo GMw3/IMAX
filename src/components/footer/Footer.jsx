@@ -1,4 +1,5 @@
 import React from "react";
+
 import group7left from "../../images/footer/group7left.webp";
 import group7right from "../../images/footer/group7right.webp";
 import footerLeft from "../../images/footer/footerLeft.webp";
