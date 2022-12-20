@@ -7,8 +7,8 @@ const NFTDetails = () => {
   return (
     <>
       <NFTDetailsCategory />
-      <div className="flex px-40 justify-center">
-        <div className="flex pl-30 p-10 py-40 flex-col w-[40%] gap-5">
+      <div className="flex md:px-40 justify-center bg-white flex-wrap">
+        <div className="flex md:pl-30 p-10 py-40 flex-col w-[40%] gap-5">
           <div className="flex justify-start">
             <h1 className="text-3xl text-red-900">The ORDOS</h1>
           </div>
@@ -32,16 +32,17 @@ const NFTDetails = () => {
         <div className="py-10 w-[1%]">
           <img src={line} alt="/" className=" object-cover h-full" />
         </div>
-
-        <div className="flex justify-center m-10 overflow-hidden w-[30%]">
-          <video
-            autoPlay
-            loop
-            muted
-            className=" w-auto min-w-full min-h-full max-w-none flex justify-center"
-          >
-            <source src={presentation_video} type="video/mp4" />
-          </video>
+        <div className="masking-image w-[30%] pt-[2%]">
+          <div className="flex justify-center m-10 overflow-hidden w-[100%] masking-image">
+            <video
+              autoPlay
+              loop
+              muted
+              className=" w-auto min-w-full min-h-full max-w-none flex justify-center"
+            >
+              <source src={presentation_video} type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </>

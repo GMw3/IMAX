@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       {enter ? (
-        <div className="bg-background-img imax_bg">
+        <div className="bg-background-img">
           <Navbar />
           <LandingSection />
           <Lore />

@@ -9,19 +9,19 @@ const header_desc = require("../../images/header_des.gif");
 const Navbar = () => {
   return (
     <>
-      <div className="flex justify-evenly fixed w-full bg-background-img">
+      <div className="flex justify-evenly fixed w-full bg-background-img z-50">
         <div className="w-[15%] px-3">
           <img src={logo} alt="We_Above" className="flex w-[140px]" />
         </div>
 
-        <div className="flex w-full ">
-          <div className="flex w-[50%] justify-end">
+        <div className="flex w-full">
+          <div className="flex w-[50%] justify-end mr-20">
             <div className="p-3">LORE</div>
             <div className="p-3">NFT</div>
             <div className="p-3">ROADMAP</div>
           </div>
-          <div>
-            <img src={header_desc} alt="/" className="clip-path-mypolygon" />
+          <div className="z-10 left-[1200px] absolute">
+            <img src={header_desc} alt="/" className="clip-path-mypolygon w-[65%] mt-6" />
           </div>
           <div className="flex w-[50%] justify-start">
             <div className="p-3">CREW</div>

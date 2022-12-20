@@ -3,6 +3,34 @@
 @tailwind utilities;
 
 .imax_bg{
-    position: absolute;
+    position: relative;
     background-size: 100% 100%;
+}
+
+.masking-image{    
+    mask-image: url(../src/images/trailer_video_border.webp);
+    -webkit-mask-image: url(../src/images/trailer_video_border.webp);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.lore-masking-image{
+    mask-image: url(../src/images/lore_img.svg);
+    -webkit-mask-image: url(../src/images/lore_img.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+
+.nft-masking-image{
+    mask-image: url(../src/images/NFT_background-masking.webp);
+    -webkit-mask-image: url(../src/images/NFT_background-masking.webp);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }

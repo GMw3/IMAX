@@ -31,8 +31,8 @@ const Lore = () => {
               eius ratione? Cupiditate, tenetur.
             </span>
           </div>
-          <div className="flex w-full">
-            <img src={lore_pic} alt="/" />
+          <div className="flex w-full lore-masking-image ">
+            <img src={lore_pic} alt="/" className="bg-black p-20"/>
           </div>
         </div>
       </div>
