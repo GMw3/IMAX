@@ -7,7 +7,11 @@ module.exports = {
         "background-img": "url('./images/bg.svg')",
         "trailer-border": "url('./images/trailer_video_border.webp')",
         "nft-category-header": "url('./images/NFTCategoryNavbarHeader.webp')",
+        "category-selected": "url('./images/highlighted_category.png')",
       },
+      fontFamily: {
+        heebo: "'Heebo', sans-serif",
+      }
     },
     clipPath: {
       mypolygon: "polygon(50% 0px, 100% 50%, 50% 100%, 0% 50%)",
