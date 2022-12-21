@@ -10,8 +10,8 @@ const Lore = () => {
             LORE
           </h1>
         </div>
-        <div className="flex justify-center">
-          <div className="flex flex-col p-3">
+        <div className="flex justify-center md:flex-nowrap flex-wrap">
+          <div className="flex flex-col p-3 flex-wrap">
             <span className="w-[500px] p-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
               quaerat iste alias nam dignissimos quae necessitatibus illo cumque
