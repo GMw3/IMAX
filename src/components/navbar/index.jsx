@@ -9,28 +9,28 @@ const twitter = require("../../images/logo_twitter.webp");
 const Navbar = () => {
   return (
     <>
-      <div className="flex justify-evenly fixed w-full bg-background-img z-50 border-b-4 border-red-400">
-        <div className="w-[14%] px-3">
-          <img src={logo} alt="We_Above" className="flex w-[140px]" />
+      <div className="flex justify-between  fixed w-full bg-background-img z-50 border-b-4 border-red-400">
+        <div className="w-[140px] m-4">
+          <img src={logo} alt="We_Above" />
         </div>
 
-        <div className="flex w-full">
-          <div className="flex w-[50%] justify-end items-center mr-20 font-heebo text-[#a5b4bd] text-lg">
+        <div className="flex  justify-center">
+          <div className="flex justify-end items-center font-heebo text-[#a5b4bd] text-lg">
             <div className="px-10 ">LORE</div>
             <div className="px-10 ">NFT</div>
             <div className="px-10 ">ROADMAP</div>
           </div>
-          <div className="z-10 left-[1200px] absolute">
-            <img src={header_desc} alt="/" className="clip-path-mypolygon w-[60%] mt-7" />
+          <div className="flex justify-center relative top-[67%] mt-[-3%]">
+            <img src={header_desc} alt="/" className="clip-path-mypolygon" />
           </div>
-          <div className="flex w-[50%] justify-start items-center font-heebo text-[#a5b4bd] text-lg">
+          <div className="flex justify-start items-center font-heebo text-[#a5b4bd] text-lg">
             <div className="px-10">CREW</div>
             <div className="px-10">FACTIONS</div>
             <div className="px-10">FAQ</div>
           </div>
         </div>
 
-        <div className="flex justify-evenly w-[8%]">
+        <div className="flex justify-evenly">
           <div className="w-[70px] p-3">
             <img src={twitter} alt="/" />
           </div>
