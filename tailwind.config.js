@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "background-img": "url('./images/bg.svg')",
-        "trailer-border": "url('./images/trailer_video_border.webp')",
-        "nft-category-header": "url('./images/NFTCategoryNavbarHeader.webp')",
-        "category-selected": "url('./images/highlighted_category.png')",
+        "background-img": "url('./images/Background/bg.svg')",
+        "trailer-border": "url('./images/Background/trailer_video_border.webp')",
+        "nft-category-header": "url('./images/NFT/NFTCategoryNavbarHeader.webp')",
+        "category-selected": "url('./images/NFT/highlighted_category.png')",
       },
       fontFamily: {
         heebo: "'Heebo', sans-serif",

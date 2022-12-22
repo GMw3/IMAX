@@ -2,7 +2,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect, useState } from "react";
 
-const background = require("./images/bg.svg").default;
+const background = require("./images/Background/bg.svg").default;
 import CoreTeam from "./components/core_team/CoreTeam";
 import EnteringSection from "./components/enteringSection";
 import Faq from "./components/faq/Faq";

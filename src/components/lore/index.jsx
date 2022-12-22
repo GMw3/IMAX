@@ -1,6 +1,6 @@
 import React from "react";
 
-const lore_pic = require("../../images/lore_img.webp");
+const lore_pic = require("../../images/lore/lore_img.webp");
 const Lore = () => {
   return (
     <>

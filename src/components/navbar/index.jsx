@@ -1,10 +1,10 @@
 import React from "react";
 
-const discord = require("../../images/logo_discord.webp");
-const header_desc = require("../../images/header_des.gif");
-const logo = require("../../images/logo2desktop.png");
-const opensea = require("../../images/logo_opensea.svg").default;
-const twitter = require("../../images/logo_twitter.webp");
+const discord = require("../../images/navbar/logo_discord.webp");
+const header_desc = require("../../images/navbar/header_des.gif");
+const logo = require("../../images/navbar/logo2desktop.png");
+const opensea = require("../../images/navbar/logo_opensea.svg").default;
+const twitter = require("../../images/navbar/logo_twitter.webp");
 
 const Navbar = () => {
   return (

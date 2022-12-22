@@ -1,6 +1,6 @@
 import React from "react";
 
-const line = require("../../../images/line.svg").default;
+const line = require("../../../images/NFT/line.svg").default;
 
 const NFTDetailsCart = ({ NFT }) => {
   return (

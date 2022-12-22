@@ -1,6 +1,6 @@
 import React from "react";
 
-const person = require("../../images/magicien_crop.webp");
+const person = require("../../images/landing/magicien_crop.webp");
 const trailer = require("../../videos/trailer_weabove3.mp4");
 const LandingSection = () => {
   return (
