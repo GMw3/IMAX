@@ -10,8 +10,8 @@ const Team = () => {
         TEAM
       </div>
       <div className="mb-10" data-aos="fade-up">
-        {TeamDetails.map((member) => {
-          return <TeamMember member={member} />;
+        {TeamDetails.map((member, index) => {
+          return <TeamMember member={member} key={index} />;
         })}
       </div>
       <div className="text-red-700 font-semibold text-center text-4xl pb-4">

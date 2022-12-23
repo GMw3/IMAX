@@ -10,8 +10,8 @@ const CoreTeam = () => {
         CORE TEAM
       </div>
       <div className="grid grid-cols-12 justify-items-center sm:mx-[10%] ">
-        {CoreTeamDetails.map((member) => {
-          return <CoreTeamMember member={member} />;
+        {CoreTeamDetails.map((member, index) => {
+          return <CoreTeamMember member={member} key={index} />;
         })}
       </div>
     </div>

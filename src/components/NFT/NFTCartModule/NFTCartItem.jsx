@@ -1,7 +1,6 @@
 import React from "react";
 
 const NFTCartItem = ({ nft_video }) => {
-    console.log(nft_video)
   return (
     <>
       <div className="lg:p-14 md:p-4 p-6 md:w-1/3 sm:w-full">

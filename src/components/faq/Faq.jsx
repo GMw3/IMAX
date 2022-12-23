@@ -10,8 +10,8 @@ const Faq = () => {
         FAQ
       </div>
       <div className="">
-        {asked_questions.map((question) => {
-          return <SingleQuestionItem qa={question} />;
+        {asked_questions.map((question, index) => {
+          return <SingleQuestionItem qa={question} key={index} />;
         })}
       </div>
     </div>
