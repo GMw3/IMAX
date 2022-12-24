@@ -14,30 +14,11 @@ const Roadmap = ({ enable_Modal }) => {
   const videoRef = useRef(null)
   const playerRef = useRef(null)
 
-  const fullscreen = () => {
-    const current = playerRef.current
-    if (current.requestFullscreen) {
-      current.requestFullscreen()
-    } else if (current.mozRequestFullScreen) {
-      current.mozRequestFullScreen()
-    } else if (current.webkitRequestFullscreen) {
-      current.webkitRequestFullscreen()
-    } else if (current.msRequestFullscreen) {
-      current.msRequestFullscreen()
-    }
-    console.log(playerRef.current)
-  }
-
-  const exitFullscreen = () => {
-    const current = playerRef.current
-    if (current.requestFullscreen) {
-      current.requestFullscreen()
-    } else if (current.mozRequestFullScreen) {
-      current.mozRequestFullScreen()
-    } else if (current.webkitRequestFullscreen) {
-      current.webkitRequestFullscreen()
-    } else if (current.msRequestFullscreen) {
-      current.msRequestFullscreen()
+  const handleFullscreen = () => {
+    if (playerRef.current === document.fullscreenElement) {
+      document.exitFullscreen()
+    } else {
+      playerRef.current.requestFullscreen()
     }
   }
 
@@ -54,9 +35,21 @@ const Roadmap = ({ enable_Modal }) => {
   }
 
   React.useLayoutEffect(() => {
-    document.addEventListener('fullscreenchange', function (e) {
-      videoRef.current.muted = !videoRef.current.muted
-    })
+    document
+      .getElementById('player')
+      .addEventListener('fullscreenchange', () => {
+        if (playerRef.current === document.fullscreenElement) {
+          videoRef.current.muted = false
+          document.getElementById('controls').classList.remove('hidden')
+          document.getElementById('cross-btn').classList.remove('hidden')
+          document.getElementById('fullscreen-btn').classList.add('hidden')
+        } else {
+          videoRef.current.muted = true
+          document.getElementById('controls').classList.add('hidden')
+          document.getElementById('cross-btn').classList.add('hidden')
+          document.getElementById('fullscreen-btn').classList.remove('hidden')
+        }
+      })
   }, [])
 
   return (
@@ -66,29 +59,41 @@ const Roadmap = ({ enable_Modal }) => {
       </div>
 
       <div className="flex justify-center">
-        <div ref={playerRef} className="relative w-[60%] masking-image flex justify-center items-center object-contain">
+        <div
+          id="player"
+          ref={playerRef}
+          className="relative w-[60%] masking-image flex justify-center items-center object-contain"
+        >
           <video
             ref={videoRef}
             autoPlay
             loop
             muted
             className="masking-image w-[100%]"
-            onClick={() => fullscreen()}
+            onClick={() => handleFullscreen()}
           >
             <source src={roadmap_vid} type="video/mp4" />
             <p className="text-6xl">Qais</p>
           </video>
 
-          <img className="absolute w-[60px] right-10 top-10 z-30" src={button_cross} alt="" />
           <img
-            id='fullscreen-btn'
+            id="cross-btn"
+            className="absolute w-[60px] right-10 top-10 z-30 hidden"
+            src={button_cross}
+            alt=""
+            onClick={() => handleFullscreen()}
+          />
+          <img
+            id="fullscreen-btn"
             className="absolute w-[60px]"
             src={button_fullscreen}
             alt=""
-            onClick={() => fullscreen()}
+            onClick={() => handleFullscreen()}
           />
-          <div className="absolute flex bottom-5">
-
+          <div
+            id="controls"
+            className="absolute flex bottom-5 hidden w-[60%] gap-8 items-center"
+          >
             <img
               className="w-[60px]"
               src={button_rewind}
@@ -106,6 +111,14 @@ const Roadmap = ({ enable_Modal }) => {
               src={button_volume}
               alt=""
               onClick={() => muteUnmute()}
+            />
+            <input
+              type="range"
+              min="1"
+              max="100"
+              // value="50"
+              step="1"
+              className="w-[100%] h-1"
             />
           </div>
         </div>
