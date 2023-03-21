@@ -43,6 +43,7 @@ function App() {
       toastId: "custom-id-yes",
     });
   };
+
   const setupConnections = async () => {
     if (window.ethereum != null) {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -63,6 +64,7 @@ function App() {
       return false;
     }
   };
+
   const connection = async () => {
     const res = await setupConnections();
     if (res === false) {
@@ -76,6 +78,7 @@ function App() {
       setWallet(res.slice(0, 6) + "..." + res.slice(36, 42));
     }
   };
+
   const disconnect = async () => {
     setWallet("Connect a Wallet");
     setLogout(false);
@@ -84,6 +87,7 @@ function App() {
     setPrice("-");
     setImages([]);
   };
+
   const readContract = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const contract = new ethers.Contract(
@@ -100,6 +104,7 @@ function App() {
     setUserMintedAmount(parseInt(userMintedAmount, 10));
     setPrice(Number(ethers.utils.formatEther(price)));
   };
+
   const getTokens = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const contract = new ethers.Contract(
@@ -139,20 +144,12 @@ function App() {
           <ToastContainer position="top-center" autoClose={2000} />
           <BrowserRouter>
             <Navbar
-              logout={logout}
-              disconnect={disconnect}
-              setUserMintedAmount={setUserMintedAmount}
-              setMaxMintAmount={setMaxMintAmount}
-              setPrice={setPrice}
-              setImages={setImages}
               connection={connection}
-              readContract={readContract}
+              disconnect={disconnect}
               getTokens={getTokens}
+              logout={logout}
+              readContract={readContract}
               wallet={wallet}
-              price={price}
-              images={images}
-              userMintedAmount={userMintedAmount}
-              maxMintAmount={maxMintAmount}
             />
 
             <Routes>
@@ -168,7 +165,6 @@ function App() {
                     <CoreTeam />
                     <Team />
                     <Faq />
-                    <Footer />
                   </>
                 }
               />
@@ -193,11 +189,11 @@ function App() {
                       setPrice={setPrice}
                       setImages={setImages}
                     />
-                    <Footer />
                   </>
                 }
               />
             </Routes>
+            <Footer />
           </BrowserRouter>
 
           {showVidModal && (

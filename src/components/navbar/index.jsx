@@ -8,20 +8,12 @@ const opensea = require("../../images/navbar/logo_opensea.svg").default;
 const twitter = require("../../images/navbar/logo_twitter.webp");
 
 const Navbar = ({
-  logout,
-  disconnect,
-  setUserMintedAmount,
-  setMaxMintAmount,
-  setPrice,
-  setImages,
   connection,
-  readContract,
+  disconnect,
   getTokens,
+  logout,
+  readContract,
   wallet,
-  price,
-  images,
-  userMintedAmount,
-  maxMintAmount,
 }) => {
   const navigate = useNavigate();
   return (
@@ -51,10 +43,6 @@ const Navbar = ({
             logout
               ? (async function () {
                   await disconnect();
-                  await setUserMintedAmount(0);
-                  await setMaxMintAmount("-");
-                  await setPrice("-");
-                  await setImages([]);
                   navigate("/");
                 })()
               : (async function () {
