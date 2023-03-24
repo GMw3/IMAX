@@ -1,4 +1,5 @@
 import image_1 from "../../images/core_team/core_team.webp";
+
 export const CoreTeamDetails = [
   {
     name: "Romp",

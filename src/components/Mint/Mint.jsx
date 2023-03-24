@@ -1,11 +1,11 @@
+
 import React, { useState, useEffect } from "react";
+import "react-toastify/dist/ReactToastify.css";
 import { ethers } from "ethers";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 import { ContractABI } from "./Contract";
 
-import "react-toastify/dist/ReactToastify.css";
 
 function Mint({
   wallet,

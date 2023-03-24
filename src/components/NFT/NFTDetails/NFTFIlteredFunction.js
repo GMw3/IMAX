@@ -8,4 +8,3 @@ export default function get_NFTs_Filtered_Details(NFTDetails, NFTDetailsData) {
       }
       return filtered_NFTs;
   }
-  

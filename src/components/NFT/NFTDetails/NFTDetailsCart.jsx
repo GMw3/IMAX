@@ -25,14 +25,6 @@ const NFTDetailsCart = ({ NFT }) => {
         </div>
         <div className="masking-image w-full md:w-[40%] pt-[2%] flex">
           <div className="flex justify-center m-10 overflow-hidden w-[100%] masking-image">
-            {/* <video
-              autoPlay
-              loop
-              muted
-              className=" w-auto min-w-full min-h-full max-w-none flex justify-center"
-            >
-              <source src={NFT.video_url} type="video/mp4" />
-            </video> */}
             <VideoPlayer url={NFT.video_url} id={3} />
           </div>
         </div>
