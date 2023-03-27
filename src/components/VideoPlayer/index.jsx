@@ -11,7 +11,7 @@ import {
   handleFullscreen,
   handleAutoSeek,
   handleSeekByUser,
-} from './videoController'
+} from './Helping_Functions/videoController'
 
 const index = ({ url, id }) => {
   const videoRef = useRef(null)

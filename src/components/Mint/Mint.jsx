@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ethers } from "ethers";
 import { toast } from "react-toastify";
 
-import { ContractABI } from "./Contract";
+import { ContractABI } from "../../content/mint/Contract";
 
 
 function Mint({

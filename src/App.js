@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { ethers } from "ethers";
 
-import { ContractABI } from "./components/Mint/Contract";
+import { ContractABI } from "../src/content/mint/Contract";
 const background = require("./images/Background/bg.svg").default;
 import CoreTeam from "./components/core_team/CoreTeam";
 import EnteringSection from "./components/enteringSection";

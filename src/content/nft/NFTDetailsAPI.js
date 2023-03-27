@@ -1,4 +1,4 @@
-const nft_video = require("../../../videos/presentation_ordos.mp4");
+const nft_video = require("../../videos/presentation_ordos.mp4");
 
 const NFTDetailsData = [
   {

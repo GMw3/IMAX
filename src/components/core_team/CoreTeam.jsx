@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CoreTeamDetails } from "./CoreTeamDetails";
+import { CoreTeamDetails } from "../../content/core_team";
 import CoreTeamMember from "./CoreTeamMember";
 
 const CoreTeam = () => {

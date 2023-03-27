@@ -1,7 +1,7 @@
 import React, { useState} from "react"
 
 import NFTCategory from "./NFTCategoryNavbar"
-import NFTCollectionsData from "./NFTItemsAPI"
+import NFTCollectionsData from "../../content/nft/NFTItemsAPI"
 import NFTDetails from "./NFTDetails"
 import get_NFTs_Filtered from "./helping_Functions/NFTSelectingFuction"
 import NFTCarts from "./NFTCartModule"

@@ -1,9 +1,9 @@
 import React, {useState} from "react"
 
-import get_NFTs_Filtered_Details from "./NFTFIlteredFunction";
+import get_NFTs_Filtered_Details from "../helping_Functions/NFTFIlteredFunction";
 import NFTDetailsCart from "./NFTDetailsCart"
 import NFTDetailsCategory from "./DetailsNavbar"
-import NFTDetailsData from "./NFTDetailsAPI";
+import NFTDetailsData from "../../../content/nft/NFTDetailsAPI";
 
 const NFTDetails = () => {
   const [NFTDetails,setNFTDetails] = useState("ORDOS")

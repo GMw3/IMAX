@@ -1,6 +1,6 @@
 import React from "react";
 
-import { asked_questions } from "./Faq's";
+import { asked_questions } from "../../content/faq";
 import SingleQuestionItem from "./SingleQuestionItem";
 
 const Faq = () => {
