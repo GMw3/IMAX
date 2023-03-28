@@ -1,11 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ethers } from "ethers";
 import { toast } from "react-toastify";
 
 import { ContractABI } from "../../content/mint/Contract";
-
 
 function Mint({
   wallet,
@@ -83,7 +81,7 @@ function Mint({
   }, []);
 
   return (
-    <div className=" pt-[6%] pr-7">
+    <div className=" pt-[6%]">
       <div className="text-black mt-20 md:text-2xl sm:text-md text-xs text-center font-bold bg-blue-light pb-5 bg-opacity-80">
         <div>
           Total minted: {userMintedAmount}/{maxMintAmount}
@@ -113,7 +111,7 @@ function Mint({
               </button>
             </div>
             <button
-              className="btn2  md:py-0 py-3 relative  text-black  uppercase font-semibold "
+              className="btn2 md:py-0 py-3 relative  text-black  uppercase font-semibold "
               type="button"
               onClick={async () => {
                 await mint(amount);

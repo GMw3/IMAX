@@ -1,10 +1,10 @@
-import roadmap_vid from '../../videos/roadmap_hd.mp4'
-import VideoPlayer from '../VideoPlayer'
+import roadmap_vid from "../../videos/roadmap_hd.mp4";
+import VideoPlayer from "../VideoPlayer";
 
 const Roadmap = ({ enable_Modal }) => {
   return (
-    <div className="mb-14" data-aos="fade-up">
-      <div className="text-red-700 font-semibold text-center   text-4xl pb-14 pt-10">
+    <div className="mb-14" data-aos="fade-up" id="roadmap">
+      <div className="text-red-700 font-semibold text-center text-4xl pb-14 pt-10">
         ROADMAP
       </div>
 
@@ -14,7 +14,7 @@ const Roadmap = ({ enable_Modal }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Roadmap
+export default Roadmap;

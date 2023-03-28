@@ -5,7 +5,10 @@ const lore_pic = require("../../images/lore/lore_img.webp");
 const Lore = () => {
   return (
     <>
-      <div className="flex flex-col justify-center px-[25%] mt-[10%] flex-wrap md:flex-row">
+      <div
+        className="flex flex-col justify-center px-[25%] mt-[10%] flex-wrap md:flex-row"
+        id="lore"
+      >
         <div className="flex">
           <h1 className="text-red-900 mt-[10%] text-6xl border-b-4 px-5 border-red-500">
             LORE
@@ -33,7 +36,7 @@ const Lore = () => {
             </span>
           </div>
           <div className="flex w-full lore-masking-image ">
-            <img src={lore_pic} alt="/" className="bg-black p-20"/>
+            <img src={lore_pic} alt="/" className="bg-black p-20" />
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
-import button_cross from '../../images/modal/button_cross.webp'
-import button_fullscreen from '../../images/modal/button_fullscreen_white.webp'
-import button_rewind from '../../images/modal/button_rewind_02.webp'
-import button_pause from '../../images/modal/button_hold_02.webp'
-import button_volume from '../../images/modal/button_unmute.webp'
-import { useRef, useLayoutEffect, useEffect, useState } from 'react'
+import button_cross from "../../images/modal/button_cross.webp";
+import button_fullscreen from "../../images/modal/button_fullscreen_white.webp";
+import button_rewind from "../../images/modal/button_rewind_02.webp";
+import button_pause from "../../images/modal/button_hold_02.webp";
+import button_volume from "../../images/modal/button_unmute.webp";
+import { useRef, useLayoutEffect, useEffect, useState } from "react";
 import {
   muteUnmute,
   rewind,
@@ -11,42 +11,41 @@ import {
   handleFullscreen,
   handleAutoSeek,
   handleSeekByUser,
-} from './Helping_Functions/videoController'
+} from "./Helping_Functions/videoController";
 
 const index = ({ url, id }) => {
-  const videoRef = useRef(null)
-  const playerRef = useRef(null)
-  const [videoDuration, setVideoDuration] = useState(null)
+  const videoRef = useRef(null);
+  const playerRef = useRef(null);
+  const [videoDuration, setVideoDuration] = useState(null);
 
-  console.log(videoRef.current)
   useEffect(() => {
     if (videoRef.current) {
-      setVideoDuration(Math.floor(videoRef.current.duration))
-      console.log(videoRef.current.duration)
+      setVideoDuration(Math.floor(videoRef.current.duration));
+      console.log(videoRef.current.duration);
     }
-  }, [videoRef])
+  }, [videoRef]);
 
   useLayoutEffect(() => {
     document
       .getElementById(`player-${id}`)
-      .addEventListener('fullscreenchange', () => {
+      .addEventListener("fullscreenchange", () => {
         if (playerRef.current === document.fullscreenElement) {
-          videoRef.current.muted = false
-          document.getElementById(`controls-${id}`).classList.remove('hidden')
-          document.getElementById(`cross-btn-${id}`).classList.remove('hidden')
+          videoRef.current.muted = false;
+          document.getElementById(`controls-${id}`).classList.remove("hidden");
+          document.getElementById(`cross-btn-${id}`).classList.remove("hidden");
           document
             .getElementById(`fullscreen-btn-${id}`)
-            .classList.add('hidden')
+            .classList.add("hidden");
         } else {
-          videoRef.current.muted = true
-          document.getElementById(`controls-${id}`).classList.add('hidden')
-          document.getElementById(`cross-btn-${id}`).classList.add('hidden')
+          videoRef.current.muted = true;
+          document.getElementById(`controls-${id}`).classList.add("hidden");
+          document.getElementById(`cross-btn-${id}`).classList.add("hidden");
           document
             .getElementById(`fullscreen-btn-${id}`)
-            .classList.remove('hidden')
+            .classList.remove("hidden");
         }
-      })
-  }, [])
+      });
+  }, []);
 
   return (
     <div
@@ -117,7 +116,7 @@ const index = ({ url, id }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default index;

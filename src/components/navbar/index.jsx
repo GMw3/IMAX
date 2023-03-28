@@ -25,17 +25,41 @@ const Navbar = ({
 
         <div className="flex  justify-center">
           <div className="flex justify-end items-center font-heebo text-[#a5b4bd] text-lg">
-            <div className="px-10 hover:text-black">LORE</div>
-            <div className="px-10 hover:text-black">NFT</div>
-            <div className="px-10 hover:text-black">ROADMAP</div>
+            <div className="px-10 hover:text-black">
+              <a href={window.location.pathname === "/mint" ? "/ " : "#lore"}>
+                LORE
+              </a>
+            </div>
+            <div className="px-10 hover:text-black">
+              <a href={window.location.pathname === "/mint" ? "/" : "#nft"}>
+                NFT
+              </a>
+            </div>
+            <div className="px-10 hover:text-black">
+              <a
+                href={window.location.pathname === "/mint" ? "/ " : "#roadmap"}
+              >
+                ROADMAP
+              </a>
+            </div>
           </div>
           <div className="flex justify-center relative top-[67%] mt-[-3%]">
             <img src={header_desc} alt="/" className="clip-path-mypolygon" />
           </div>
           <div className="flex justify-start items-center  font-heebo text-[#a5b4bd] text-lg">
-            <div className="px-10 hover:text-black">CREW</div>
-            <div className="px-10 hover:text-black">FACTIONS</div>
-            <div className="px-10 hover:text-black">FAQ</div>
+            <div className="px-10 hover:text-black">
+              <a href={window.location.pathname === "/mint" ? "/" : "#crew"}>
+                CREW
+              </a>
+            </div>
+            <div className="px-10 hover:text-black">
+              <a href={window.location.pathname === "/mint" ? "/" : "#faq"}>
+                FAQ
+              </a>
+            </div>
+            <div className="px-10 hover:text-black">
+              <a href="/mint">Mint</a>
+            </div>
           </div>
         </div>
         <button

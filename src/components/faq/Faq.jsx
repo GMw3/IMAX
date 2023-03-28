@@ -5,7 +5,7 @@ import SingleQuestionItem from "./SingleQuestionItem";
 
 const Faq = () => {
   return (
-    <div data-aos="fade-up">
+    <div data-aos="fade-up" id="faq">
       <div className="text-red-700 font-semibold text-center text-4xl pb-10">
         FAQ
       </div>

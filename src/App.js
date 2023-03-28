@@ -134,6 +134,7 @@ function App() {
   };
 
   useEffect(() => {
+    connection();
     Aos.init({ duration: 3000 });
   }, []);
 

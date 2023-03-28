@@ -5,7 +5,7 @@ import CoreTeamMember from "./CoreTeamMember";
 
 const CoreTeam = () => {
   return (
-    <div data-aos="fade-up">
+    <div data-aos="fade-up" id="crew">
       <div className="text-red-700 font-semibold text-center text-4xl pb-10 pt-10">
         CORE TEAM
       </div>
