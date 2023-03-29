@@ -26,7 +26,9 @@ import "./App.css";
 function App() {
   const [showVidModal, setShowVidModal] = useState(false);
   const [video_src, setVideo_src] = useState("");
-  const [enter, setEnter] = useState(false);
+  const [enter, setEnter] = useState(
+    window.location.pathname === "/" ? false : true
+  );
   const [wallet, setWallet] = useState("Connect a Wallet");
   const [logout, setLogout] = useState(false);
   const [maxMintAmount, setMaxMintAmount] = useState();
