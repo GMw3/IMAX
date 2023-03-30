@@ -24,6 +24,7 @@ import Mint from "./components/Mint/Mint.jsx";
 import "./App.css";
 
 function App() {
+  console.log("object")
   const [showVidModal, setShowVidModal] = useState(false);
   const [video_src, setVideo_src] = useState("");
   const [enter, setEnter] = useState(
