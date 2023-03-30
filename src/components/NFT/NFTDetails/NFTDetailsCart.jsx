@@ -7,7 +7,7 @@ const NFTDetailsCart = ({ NFT }) => {
   return (
     <>
       <div className="flex md:px-40 justify-center bg-white flex-wrap flex-col md:flex-row">
-        <div className="flex md:pl-30 p-10 py-40 px-36 flex-col w-full md:w-[40%] gap-5 flex-wrap">
+        <div className="flex p-10 py-20 flex-col w-full md:w-[100%] gap-5 flex-wrap">
           <div className="flex justify-start">
             <h1 className="text-3xl text-red-900">{NFT.title}</h1>
           </div>
@@ -20,11 +20,8 @@ const NFTDetailsCart = ({ NFT }) => {
           </div>
         </div>
 
-        <div className="flex py-10 w-[1%] invisible md:visible">
-          <img src={line} alt="/" className=" h-full" />
-        </div>
-        <div className="masking-image w-full md:w-[40%] pt-[2%] flex">
-          <div className="flex justify-center m-10 overflow-hidden w-[100%] masking-image">
+        <div className="masking-image w-full md:w-[100%] lg:w-[80%] 2xl:w-[60%] pt-[2%] flex">
+          <div className="flex justify-center mx-10 mb-10 overflow-hidden w-[100%] masking-image">
             <VideoPlayer url={NFT.video_url} id={3} />
           </div>
         </div>

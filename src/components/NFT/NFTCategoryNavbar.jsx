@@ -5,9 +5,9 @@ const NFTCategory = ({ nftSelectedCategory, setCategory }) => {
     <>
       <div className="flex mt-[10%] justify-evenly p-40" id="nft">
         <div className="bg-nft-category-header bg-cover w-full h-[40px]"></div>
-        <div className="flex">
+        <div className="flex mx-[5%]">
           <div
-            className={`p-5 text-3xl ${
+            className={`p-5 text-xl sm:text-3xl ${
               nftSelectedCategory === "ORDOS" &&
               "bg-category-selected bg-[length:100%_100%]"
             }`}
@@ -18,7 +18,7 @@ const NFTCategory = ({ nftSelectedCategory, setCategory }) => {
             ORDOS
           </div>
           <div
-            className={`p-5 text-3xl ${
+            className={`p-5 text-xl sm:text-3xl ${
               nftSelectedCategory === "FREO" &&
               "bg-category-selected bg-[length:100%_100%]"
             }`}
@@ -29,7 +29,7 @@ const NFTCategory = ({ nftSelectedCategory, setCategory }) => {
             FREO
           </div>
           <div
-            className={`p-5 text-3xl ${
+            className={`p-5 text-xl sm:text-3xl ${
               nftSelectedCategory === "ALTARI" &&
               "bg-category-selected bg-[length:100%_100%]"
             }`}

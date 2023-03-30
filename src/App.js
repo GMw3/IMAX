@@ -24,19 +24,18 @@ import Mint from "./components/Mint/Mint.jsx";
 import "./App.css";
 
 function App() {
-  console.log("object")
   const [showVidModal, setShowVidModal] = useState(false);
   const [video_src, setVideo_src] = useState("");
   const [enter, setEnter] = useState(
     window.location.pathname === "/" ? false : true
-  );
-  const [wallet, setWallet] = useState("Connect a Wallet");
-  const [logout, setLogout] = useState(false);
-  const [maxMintAmount, setMaxMintAmount] = useState();
-  const [price, setPrice] = useState(0);
-  const [images, setImages] = useState([]);
-  const [userMintedAmount, setUserMintedAmount] = useState(0);
-
+    );
+    const [wallet, setWallet] = useState("Connect a Wallet");
+    const [logout, setLogout] = useState(false);
+    const [maxMintAmount, setMaxMintAmount] = useState();
+    const [price, setPrice] = useState(0);
+    const [images, setImages] = useState([]);
+    const [userMintedAmount, setUserMintedAmount] = useState(0);
+    
   const { REACT_APP_NETWORK } = process.env;
   const { REACT_APP_NETWORK_CHAIN_ID } = process.env;
   const { REACT_APP_CONTRACT_ADDRESS } = process.env;
@@ -46,7 +45,7 @@ function App() {
       toastId: "custom-id-yes",
     });
   };
-
+  
   const setupConnections = async () => {
     if (window.ethereum != null) {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -54,18 +53,18 @@ function App() {
       if (REACT_APP_NETWORK !== network.name) {
         notify(
           `Not on a correct network. Change your network to "${REACT_APP_NETWORK}"`
-        );
-        return false;
+          );
+          return false;
+        } else {
+          await provider.send("eth_requestAccounts", []);
+          const signer = await provider.getSigner();
+          const address = await signer.getAddress();
+          return address;
+        }
       } else {
-        await provider.send("eth_requestAccounts", []);
-        const signer = await provider.getSigner();
-        const address = await signer.getAddress();
-        return address;
+        notify("No Ether wallet available");
+        return false;
       }
-    } else {
-      notify("No Ether wallet available");
-      return false;
-    }
   };
 
   const connection = async () => {
@@ -81,7 +80,7 @@ function App() {
       setWallet(res.slice(0, 6) + "..." + res.slice(36, 42));
     }
   };
-
+  
   const disconnect = async () => {
     setWallet("Connect a Wallet");
     setLogout(false);
@@ -90,15 +89,15 @@ function App() {
     setPrice("-");
     setImages([]);
   };
-
+  
   const readContract = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const contract = new ethers.Contract(
       REACT_APP_CONTRACT_ADDRESS,
       ContractABI,
       provider
-    );
-    const maxMintAmount = await contract.maxMintAmount();
+      );
+      const maxMintAmount = await contract.maxMintAmount();
     let accounts = await provider.send("eth_requestAccounts", []);
     let address = accounts[0];
     const userMintedAmount = await contract.balanceOf(address);
@@ -107,42 +106,42 @@ function App() {
     setUserMintedAmount(parseInt(userMintedAmount, 10));
     setPrice(Number(ethers.utils.formatEther(price)));
   };
-
+  
   const getTokens = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const contract = new ethers.Contract(
       REACT_APP_CONTRACT_ADDRESS,
       ContractABI,
       provider
-    );
-    let accounts = await provider.send("eth_requestAccounts", []);
-    let address = accounts[0];
-    const imagesTockens = await contract.nftsOnwedByWallet(address);
-    let imagesLocal = [];
-    await imagesTockens.map(async (image) => {
-      const url = await contract.tokenURI(parseInt(image, 10));
-      let result = await url.replace("ipfs://", "https://ipfs.io/ipfs/");
-      const jsonBody = await (await fetch(result)).json();
-      imagesLocal.push(
-        await jsonBody.image.replace("ipfs://", "https://ipfs.io/ipfs/")
       );
-    });
-    setTimeout(() => {
-      setImages(imagesLocal);
-    }, [3000]);
-  };
-  const enable_Modal = (vid_src) => {
-    setVideo_src(vid_src);
-    setShowVidModal(true);
-  };
+      let accounts = await provider.send("eth_requestAccounts", []);
+      let address = accounts[0];
+      const imagesTockens = await contract.nftsOnwedByWallet(address);
+      let imagesLocal = [];
+      await imagesTockens.map(async (image) => {
+        const url = await contract.tokenURI(parseInt(image, 10));
+        let result = await url.replace("ipfs://", "https://ipfs.io/ipfs/");
+        const jsonBody = await (await fetch(result)).json();
+        imagesLocal.push(
+          await jsonBody.image.replace("ipfs://", "https://ipfs.io/ipfs/")
+          );
+        });
+        setTimeout(() => {
+          setImages(imagesLocal);
+        }, [3000]);
+      };
+      const enable_Modal = (vid_src) => {
+        setVideo_src(vid_src);
+        setShowVidModal(true);
+      };
 
-  useEffect(() => {
-    connection();
-    Aos.init({ duration: 3000 });
-  }, []);
-
-  return (
-    <>
+      useEffect(() => {
+        connection();
+        Aos.init({ duration: 3000 });
+      }, []);
+      
+      return (
+        <>
       {enter ? (
         <div className="bg-background-img">
           <ToastContainer position="top-center" autoClose={2000} />
@@ -154,7 +153,7 @@ function App() {
               logout={logout}
               readContract={readContract}
               wallet={wallet}
-            />
+              />
 
             <Routes>
               <Route
