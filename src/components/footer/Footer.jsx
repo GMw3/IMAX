@@ -6,7 +6,7 @@ import footerLeft from "../../images/footer/footerLeft.webp";
 import line from "../../images/footer/line.svg";
 import mask_title from "../../images/footer/mask_title.svg";
 import ming from "../../images/footer/ming.svg";
-import logo_twitter from "../../images/footer/logo_twitter.webp";
+import { SocialLinkDetails } from "../../content/footer";
 
 const Footer = () => {
   return (
@@ -33,26 +33,9 @@ const Footer = () => {
             <img className="w-[50px]" src={mask_title} alt="" />
           </div>
           <div className="flex justify-center pt-4 flex-wrap w-[100px] lg:w-[140px]">
-            <img
-              src={logo_twitter}
-              alt=""
-              className="w-[50px] lg:w-[70px] p-2"
-            />
-            <img
-              src={logo_twitter}
-              alt=""
-              className="w-[50px] lg:w-[70px] p-2"
-            />
-            <img
-              src={logo_twitter}
-              alt=""
-              className="w-[50px] lg:w-[70px] p-2"
-            />
-            <img
-              src={logo_twitter}
-              alt=""
-              className="w-[50px] lg:w-[70px] p-2"
-            />
+            {SocialLinkDetails.map((item)=>{
+              return <a href={item.link} className="w-[50px] lg:w-[70px] p-2" >{item.icon}</a>
+            })}
           </div>
         </div>
       </div>
