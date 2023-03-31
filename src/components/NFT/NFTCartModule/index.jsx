@@ -6,7 +6,7 @@ const NFTCarts = ({ NFTsData }) => {
 
   return (
     <>
-       <div className="flex flex-wrap md:mx-[5%] lg:mx-[15%]">
+       <div className="flex flex-wrap md:mx-[5%] lg:mx-[5%] 2xl:mx-[15%]">
         {NFTsData.map((nftItem,index) => {
           return <NFTCartItem key={nftItem.id} nft_video={nftItem.video_url} />;
         })}

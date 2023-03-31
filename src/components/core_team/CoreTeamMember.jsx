@@ -4,7 +4,7 @@ import { FaTwitterSquare } from "react-icons/fa";
 
 const CoreTeamMember = ({ member }) => {
   return (
-    <div className="group col-span-6 lg:col-span-3">
+    <div className="group col-span-12 md:col-span-6 lg:col-span-3">
       <div className="w-fit text-center mx-5 my-5 group-hover:scale-105 duration-100 shadow-2xl">
         <img src={member.img} alt="" />
         <div className="py-5">

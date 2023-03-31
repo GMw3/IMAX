@@ -1,7 +1,6 @@
 import React from "react";
 
-const lore_pic = require("../../images/lore/lore_img.webp");
-import loreDetails from "../../content/lore";
+import {loreDetails} from "../../content/lore";
 
 const Lore = () => {
   return (
@@ -16,10 +15,10 @@ const Lore = () => {
           <div class="md:flex">
             <div class="p-8">
               
-              <p class="mt-2 text-slate-500 text-lg">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <p class="mt-2 text-slate-500 text-lg">{loreDetails.paragraph}</p>
             </div>
             <div class="md:shrink-0 lore-masking-image flex justify-center">
-              <img class="h-48 w-full object-cover md:h-80 md:w-full " src={lore_pic} alt="" />
+              <img class="h-48 w-full object-cover md:h-80 md:w-full " src={loreDetails.img} alt="" />
             </div>
           </div>
         </div>

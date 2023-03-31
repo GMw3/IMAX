@@ -24,11 +24,12 @@ import Mint from "./components/Mint/Mint.jsx";
 import "./App.css";
 
 function App() {
+  console.log("path", window.location.pathname);
   const [showVidModal, setShowVidModal] = useState(false);
   const [video_src, setVideo_src] = useState("");
-  const [enter, setEnter] = useState(
-    window.location.pathname === "/" ? false : true
-    );
+  // const [enter, setEnter] = useState(
+  //   window.location.pathname === "/" ? false : true
+  //   );
     const [wallet, setWallet] = useState("Connect a Wallet");
     const [logout, setLogout] = useState(false);
     const [maxMintAmount, setMaxMintAmount] = useState();
@@ -142,7 +143,7 @@ function App() {
       
       return (
         <>
-      {enter ? (
+      {/* {enter ? ( */}
         <div className="bg-background-img">
           <ToastContainer position="top-center" autoClose={2000} />
           <BrowserRouter>
@@ -203,9 +204,6 @@ function App() {
             <SharedModal closeModal={setShowVidModal} video_src={video_src} />
           )}
         </div>
-      ) : (
-        <EnteringSection setScreen={setEnter} screenValue={enter} />
-      )}
     </>
   );
 }
