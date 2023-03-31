@@ -10,7 +10,6 @@ import { ethers } from "ethers";
 import { ContractABI } from "../src/content/mint/Contract";
 const background = require("./images/Background/bg.svg").default;
 import CoreTeam from "./components/core_team/CoreTeam";
-import EnteringSection from "./components/enteringSection";
 import Faq from "./components/faq/Faq";
 import Footer from "./components/footer/Footer";
 import LandingSection from "./components/landingSection";

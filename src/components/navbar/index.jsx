@@ -148,6 +148,28 @@ const Navbar = ({
                   FAQ
                 </a>
               </li>
+              <li className="my-10">
+              <button
+                    onClick={async () => {
+                      logout
+                      ? (async function () {
+                        await disconnect();
+                        navigate("/");
+                      })()
+                      : (async function () {
+                        await connection();
+                        await readContract();
+                        await getTokens();
+                        navigate("/mint");
+                      })();
+                    }}
+                    className={` ${
+                      logout ? "hover:before:content-['Disconnect:']" : ""
+                    }`}
+                    >
+                    {wallet}
+                  </button>
+              </li>
             
             </ul>
           </div>
