@@ -24,18 +24,14 @@ import Mint from "./components/Mint/Mint.jsx";
 import "./App.css";
 
 function App() {
-  console.log("path", window.location.pathname);
   const [showVidModal, setShowVidModal] = useState(false);
   const [video_src, setVideo_src] = useState("");
-  // const [enter, setEnter] = useState(
-  //   window.location.pathname === "/" ? false : true
-  //   );
-    const [wallet, setWallet] = useState("Connect a Wallet");
-    const [logout, setLogout] = useState(false);
-    const [maxMintAmount, setMaxMintAmount] = useState();
-    const [price, setPrice] = useState(0);
-    const [images, setImages] = useState([]);
-    const [userMintedAmount, setUserMintedAmount] = useState(0);
+  const [wallet, setWallet] = useState("Connect a Wallet");
+  const [logout, setLogout] = useState(false);
+  const [maxMintAmount, setMaxMintAmount] = useState();
+  const [price, setPrice] = useState(0);
+  const [images, setImages] = useState([]);
+  const [userMintedAmount, setUserMintedAmount] = useState(0);
     
   const { REACT_APP_NETWORK } = process.env;
   const { REACT_APP_NETWORK_CHAIN_ID } = process.env;
@@ -143,7 +139,6 @@ function App() {
       
       return (
         <>
-      {/* {enter ? ( */}
         <div className="bg-background-img">
           <ToastContainer position="top-center" autoClose={2000} />
           <BrowserRouter>
